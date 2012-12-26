@@ -6,7 +6,7 @@ MailbuilderPreview::Engine.routes.draw do
   
 end
 
-if Rails.env = "development"
+if Rails.env == "development"
 
   Rails.application.routes.draw do
     mount MailbuilderPreview::Engine => "/mail_preview"
