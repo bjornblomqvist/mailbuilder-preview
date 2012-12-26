@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mailbuilder-preview (0.1.0)
+    mailbuilder-preview (0.1.1)
       mailbuilder (~> 0.2.0)
       rails (~> 3.2.8)
 
