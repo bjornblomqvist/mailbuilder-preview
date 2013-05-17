@@ -1,3 +1,0 @@
-{
-  :test => "A test value"
-}
