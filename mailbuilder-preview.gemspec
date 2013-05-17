@@ -10,8 +10,9 @@ Gem::Specification.new do |s|
   s.authors     = ["Darwin"]
   s.email       = ["darwin@bits2life.com"]
   s.homepage    = "http://github.com/bjornblomqvist/mailbuilder-preview/"
-  s.summary     = ""
-  s.description = ""
+  s.summary     = "I nice helper when setting the styling for an email."
+  s.description = "I nice helper when setting the styling for an email."
+  s.licenses = ["LGPL3"]
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
