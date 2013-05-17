@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "I nice helper when setting the styling for an email."
   s.licenses = ["LGPL3"]
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["LICENSE.txt", "Rakefile", "README.markdown"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.0"
