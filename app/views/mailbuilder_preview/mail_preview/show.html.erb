@@ -1,0 +1,15 @@
+
+
+
+<iframe class="email-preview" src="<%= request.fullpath+"&load_it=true" %>">
+  
+</iframe>
+
+
+
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+    var height = $('.email-preview').contents().height();
+    $('.email-preview').css('height',height);
+  });
+</script>

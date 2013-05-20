@@ -1,25 +1,36 @@
 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Perview</th>
+      <th>File</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @email_names.each do |name| %>
 
-<h1>Email's</h1>
-<ul>
-  <% @email_names.each do |name| %>
 
+    <tr>
+      <td><%= name.capitalize %></td>
 
-  <li>
-    <%= name.capitalize %>
-    
-    (
-    <% if File.exist?("#{Rails.root}/app/emails/#{name}/#{name}.html.erb") || File.exist?("#{Rails.root}/app/emails/#{name}/#{name}.html") %>
-      <a href="/mail_preview/email/<%= name %>/">html</a>
+      <% if File.exist?("#{Rails.root}/app/emails/#{name}/#{name}.html.erb") || File.exist?("#{Rails.root}/app/emails/#{name}/#{name}.html") %>
+        <td><a href="/mail_preview/email/<%= name %>/?html=true">Html</a>
+      <% else %>
+        <span class="missing">Html</span><td>
+      <% end %>
+      
+      <% if File.exist?("#{Rails.root}/app/emails/#{name}/#{name}.txt.erb") || File.exist?("#{Rails.root}/app/emails/#{name}/#{name}.txt") %>
+        | <a href="/mail_preview/email/<%= name %>/?text=true">Text</a></td>
+      <% else %>
+        | <span class="missing">Text</span> </td>
+      <% end %>
+
+      <td><a href="/mail_preview/email/<%= name %>/?email=true"><%= "#{name}_preview.eml" %></a></td>
+    </tr>
+
     <% end %>
-    <% if File.exist?("#{Rails.root}/app/emails/#{name}/#{name}.txt.erb") || File.exist?("#{Rails.root}/app/emails/#{name}/#{name}.txt") %>
-    | <a href="/mail_preview/email/<%= name %>/?text=true">txt</a>
-    <% end %>
-    )
-    
-    <a href="/mail_preview/email/<%= name %>/?email=true">Download</a>
-  </li>
+  </tbody>
+</table>
 
-  <% end %>
-</ul>
 

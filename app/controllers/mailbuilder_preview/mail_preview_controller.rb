@@ -6,31 +6,31 @@ module MailbuilderPreview
       def index
 
         @email_names = Dir.entries("./app/emails/").delete_if {|v| v == ".." || v == '.' }.sort
-        render :layout => nil
+        render
 
       end
 
       def show
-
-        if params[:text]
-          render :text => "<pre>"+get_demo_text(MailBuilder.new(params[:email_id].to_sym))+"</pre>"
+        if params[:load_it]
+          if params[:text]
+            render :text => "<pre>"+get_demo_text(MailBuilder.new(params[:email_id].to_sym))+"</pre>"
+          else
+            render :text => get_demo_html(MailBuilder.new(params[:email_id].to_sym))
+          end
         elsif params[:email]
           builder = MailBuilder.new(params[:email_id].to_sym)
           path = builder.instance_variable_get("@path")
-          
+
           source = if File.exist?("#{path}/locals.rb")
             File.read("#{path}/locals.rb")
           else
             "{}"
           end
-          
-          send_data builder.build(eval(source)).to_s, :type => "message/rfc822", :disposition => 'inline', :filename => "#{params[:email_id]}-preview.eml"
-        else
-          render :text => get_demo_html(MailBuilder.new(params[:email_id].to_sym))
+
+          send_data builder.build(eval(source)).to_s, :type => "message/rfc822", :disposition => 'attachment', :filename => "#{params[:email_id]}-preview.eml"
         end
-
       end
-
+    
       def image
 
         path = "./app/emails/#{params[:email_id]}/#{params[:rest]}"

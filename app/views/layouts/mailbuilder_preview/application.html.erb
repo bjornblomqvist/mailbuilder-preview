@@ -8,7 +8,32 @@
 </head>
 <body>
 
-<%= yield %>
+  <div class="container-narrow">
+
+        <div class="masthead">
+          <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="/mail_preview/email/">Emails</a></li>
+            <li><a href="http://github.com/bjornblomqvist/mailbuilder-preview/">Github</a></li>
+            <li><a href="mailto:darwin@bits2life.com?subject=MailBuilder-preview">Contact me</a></li>
+          </ul>
+          <h3 class="muted">Mailbuilder Preview</h3>
+        </div>
+
+        <hr>
+
+        <div class="marketing">
+          
+          <%= yield %>
+          
+        </div>
+
+        <hr>
+
+        <div class="footer">
+          <p>&copy; Björn Blomqvist 2013</p>
+        </div>
+
+      </div> <!-- /container -->
 
 </body>
 </html>
