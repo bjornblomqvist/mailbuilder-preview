@@ -17,7 +17,7 @@
       <% if File.exist?("#{Rails.root}/app/emails/#{name}/#{name}.html.erb") || File.exist?("#{Rails.root}/app/emails/#{name}/#{name}.html") %>
         <td><a href="/mail_preview/email/<%= name %>/?html=true">Html</a>
       <% else %>
-        <span class="missing">Html</span><td>
+        <td><span class="missing">Html</span>
       <% end %>
       
       <% if File.exist?("#{Rails.root}/app/emails/#{name}/#{name}.txt.erb") || File.exist?("#{Rails.root}/app/emails/#{name}/#{name}.txt") %>
