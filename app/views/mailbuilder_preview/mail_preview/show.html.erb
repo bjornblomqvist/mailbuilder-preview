@@ -1,7 +1,6 @@
 
 
-
-<iframe class="email-preview" src="<%= request.fullpath+"&load_it=true" %>">
+<iframe class="email-preview" src="<%= (request.fullpath+"&load_it=true").gsub("?","/?") %>">
   
 </iframe>
 
