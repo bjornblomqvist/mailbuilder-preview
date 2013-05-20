@@ -10,7 +10,7 @@ end
 
 if Rails.env == "development"
 
-  Rails.application.routes.prepend do
+  Rails.application.routes.draw do
     mount MailbuilderPreview::Engine => "/mail_preview"
   end
   
