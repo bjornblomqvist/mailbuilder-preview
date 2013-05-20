@@ -2,6 +2,14 @@
 
 I nice Rails Engine that lets you preview your emails. It really helpful when styling the emails. The engine is only active in development.
 
+## Instalation
+
+ Add this to your Gemfile
+
+```
+  gem "mailbuilder-preview"
+```
+
 ## Setup
 
 You need to add en extra file for the preview to work. 
