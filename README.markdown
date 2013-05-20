@@ -2,7 +2,7 @@
 
 I nice Rails Engine that lets you preview your emails. It really helpful when styling the emails. The engine is only active in development.
 
-## Instalation
+## Installation
 
  Add this to your Gemfile
 
